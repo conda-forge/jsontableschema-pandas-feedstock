@@ -14,9 +14,7 @@ Summary: Generate Pandas data frames, load and extract data, based on JSON Table
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/jsontableschema-pandas-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/jsontableschema-pandas-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/jsontableschema-pandas-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/jsontableschema-pandas-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/jsontableschema-pandas-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/jsontableschema-pandas-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/jsontableschema-pandas-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/jsontableschema-pandas-feedstock)
 
 Current release info
 ====================
