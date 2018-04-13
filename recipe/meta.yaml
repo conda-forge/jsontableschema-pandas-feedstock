@@ -3,7 +3,6 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "cf5833ebe4ddcab29f3c652304aff6a4316fa9b92d52d9ee047b9cffbb18cebf" %}
-{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -11,24 +10,27 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
     - six >=1.9,<2.0
     - pandas >=0.18,<2.0
-    - tabulator-py >=0.7,<2.0
+    - tabulator-py >=1.0,<2.0
     - jsontableschema >=0.7,<2.0
+    - tableschema-py >=1.0.4,<2.0
+    - isodate >=0.5.4,<2.0
 
 test:
   imports:
@@ -36,7 +38,7 @@ test:
 
 about:
   home: https://github.com/frictionlessdata/jsontableschema-pandas-py
-  license_file: {{ RECIPE_DIR }}/LICENSE.txt
+  license_file: LICENSE.md
   license_family: LGPL
   license: LGPLv3
   summary: 'Generate Pandas data frames, load and extract data, based on JSON Table Schema descriptors.'
